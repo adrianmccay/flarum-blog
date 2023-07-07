@@ -94,6 +94,11 @@ class UpdateBlogMetaHandler
             $blogMeta->is_sized = Arr::get($data, 'attributes.isSized', false);
         }
 
+        // Subtitle
+        if (Arr::has($data, 'attributes.subtitle')) {
+            $blogMeta->subtitle = Arr::get($data, 'attributes.subtitle', null);
+        }
+
         // Update pending review
         if ($actor->can('blog.canApprovePosts') && $blogMeta->is_pending_review && Arr::has($data, 'attributes.isPendingReview')) {
             $blogMeta->is_pending_review = Arr::get($data, 'attributes.isPendingReview', false);

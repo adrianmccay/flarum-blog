@@ -54,7 +54,7 @@ class BlogOverviewController
             "filter" => [
                 "q" => $q
             ],
-            "sort" => "-createdAt"
+            "sort" => "articleSeriesOrder"
         ]);
 
         // Set payload

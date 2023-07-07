@@ -22,7 +22,8 @@ class BlogMetaSerializer extends AbstractSerializer
             'summary'           => $meta->summary,
             'isFeatured'        => (bool) $meta->is_featured,
             'isSized'           => (bool) $meta->is_sized,
-            'isPendingReview'   => (bool) $meta->is_pending_review
+            'isPendingReview'   => (bool) $meta->is_pending_review,
+            'subtitle'          => $meta->subtitle,
         ];
     }
 

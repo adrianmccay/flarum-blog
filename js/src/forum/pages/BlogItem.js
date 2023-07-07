@@ -123,6 +123,22 @@ export default class BlogItem extends Page {
       100
     );
 
+    // Subtitle
+    console.log('article', this.article);
+    if (this.article?.blogMeta?.()?.subtitle?.()) {
+      items.add(
+        'subtitle',
+        <h2
+          className={classList('FlarumBlog-Article-Subtitle', {
+            'FlarumBlog-Article-GhostSubtitle': this.loading,
+          })}
+        >
+          {this.article?.blogMeta?.()?.subtitle?.()}
+        </h2>,
+        90
+      );
+    }
+
     items.add(
       'publishDate',
       <div

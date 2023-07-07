@@ -71,7 +71,8 @@ return [
         ->addInclude(['blogMeta', 'firstPost', 'user']),
 
     (new Extend\ApiController(FlarumController\ListDiscussionsController::class))
-        ->addInclude(['blogMeta', 'firstPost', 'user']),
+        ->addInclude(['blogMeta', 'firstPost', 'user'])
+        ->addSortField('articleSeriesOrder'),
 
     (new Extend\ApiController(FlarumController\ShowDiscussionController::class))
         ->addInclude(['blogMeta', 'firstPost', 'user']),

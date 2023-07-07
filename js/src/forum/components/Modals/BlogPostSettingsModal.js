@@ -25,6 +25,8 @@ export default class BlogPostSettingsModal extends Modal {
     this.isFeatured = Stream(this.meta.isFeatured() || false);
     this.isSized = Stream(this.meta.isSized() || false);
     this.isPendingReview = Stream(this.meta.isPendingReview() || false);
+
+    this.subtitle = Stream(this.meta.subtitle() || '');
   }
 
   className() {
@@ -63,6 +65,21 @@ export default class BlogPostSettingsModal extends Modal {
         />
 
         <small>{app.translator.trans('v17development-flarum-blog.forum.article_settings.fields.summary.helper_text')}</small>
+      </div>,
+      30
+    );
+
+    // Subtitle input field
+    items.add(
+      'subtitle',
+      <div className="Form-group">
+        <label>Subtitle:</label>
+        <input
+          type="text"
+          className="FormControl"
+          bidi={this.subtitle}
+          placeholder="Subtitle"
+        />
       </div>,
       30
     );
@@ -166,6 +183,7 @@ export default class BlogPostSettingsModal extends Modal {
       featuredImage: this.featuredImage(),
       isFeatured: this.isFeatured(),
       isSized: this.isSized(),
+      subtitle: this.subtitle(),
       isPendingReview: this.isPendingReview(),
       relationships:
         this.isNew && !this.attrs.isComposer

@@ -8,4 +8,5 @@ export default class BlogMeta extends mixin(Model, {
   isFeatured: Model.attribute('isFeatured'),
   isSized: Model.attribute('isSized'),
   isPendingReview: Model.attribute('isPendingReview'),
+  subtitle: Model.attribute('subtitle'),
 }) {}
